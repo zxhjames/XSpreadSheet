@@ -5,16 +5,15 @@ import Sheet from './component/sheet';
 import Bottombar from './component/bottombar';
 import { cssPrefix } from './config';
 import { locale } from './locale/locale';
-import Vue from 'vue'
-import axios from 'axios'
-axios.defaults.baseURL = "http://localhost:9090/";
-Vue.prototype.$axios = axios
 import './index.less';
 
 
 
 class Spreadsheet {
-  
+  import Vue from 'vue'
+import axios from 'axios'
+axios.defaults.baseURL = "http://localhost:9090/";
+Vue.prototype.$http = axios
   constructor(selectors, options = {}) {
     
     let targetEl = selectors;

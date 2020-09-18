@@ -64,8 +64,11 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "opencollective": "^1.0.3",
-    "opencollective-postinstall": "^2.0.2"
+    "opencollective-postinstall": "^2.0.2",
+    "vue": "^2.6.12",
+    "vue-resource": "^1.5.1"
   },
   "collective": {
     "type": "opencollective",

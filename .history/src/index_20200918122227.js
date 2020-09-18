@@ -8,7 +8,7 @@ import { locale } from './locale/locale';
 import Vue from 'vue'
 import axios from 'axios'
 axios.defaults.baseURL = "http://localhost:9090/";
-Vue.prototype.$axios = axios
+Vue.prototype.$http = axios
 import './index.less';
 
 

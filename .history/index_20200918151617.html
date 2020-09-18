@@ -77,7 +77,7 @@
           console.log('>>>', xs.getData());
           //在这里发送ajax请求
           const params = xs.getData();
-          console.log(params[0].rows)
+               
           /*console.log("cols==>   ") ; console.log(params[0].cols);
           console.log("freezz==>  "); console.log(params[0].freeze);
           console.log("merges==>   ");console.log( params[0].merges);
@@ -88,44 +88,28 @@
           console.log(params[0].cols[2].width)*/
 
           //这里的cols和rows需要使用map数据结构来存取
-          //理想情况下的格式为
-          // cols {"x":1,"y":1,"data":{}}
-          const x = 100
-          const y = 100; //坐标的最大值
-          var cols_obj = []
-          for(let i=0;i<y;++i) {
-              if(params[0].rows[i] != undefined) {
-                 let tmp;
-                 if(params[0].rows[i].cells != undefined){
-                    tmp = params[0].rows[i].cells
-                 }else{
-                    tmp = params[0].rows[i]
-                 }
-                 //console.log(tmp)
-                 for(let j=0;j<100;++j) {
-                   if(tmp[j]!=undefined) {
-                     cols_obj.push({"x":i,"y":j,"data":tmp[j]});
-                   }
-                 }
-              }
+          const y = 1000; //坐标的最大值
+          //抽取y的样式
+        console.log(params[0].rows)
+          let cols_map = {
+            "cols":[{"num":0,"width":200}],
+            "len":200
           }
-          console.log(cols_obj)
-
           
           //console.log(cols_map)
           //console.log(params[0].rows[1].cells[0])
-          this.axios.post(`http://localhost:9090/xsheetServer/get`,{
+          /*this.axios.post(`http://localhost:9090/xsheetServer/get`,{
             "autofilter":null,
-            //"cols":cols_map,
+            "cols":cols_map,
             "freeze":params[0].freeze,
             "merges":params[0].merges,
             "name":params[0].name,
-            //"rows":,
+            //"rows":params[0].rows,
             "styles":params[0].styles,
             "validations":params[0].validations
           }).then(res => {
               console.log(res)
-          })
+          })*/
 
         });
 
@@ -143,6 +127,6 @@
       }, 5000);*/
     }
   </script>
-  <script type="text/javascript" src="https://unpkg.com/x-data-spreadsheet@1.0.20/dist/locale/zh-cn.js"></script>
+  <!--script type="text/javascript" src="https://unpkg.com/x-data-spreadsheet@1.0.20/dist/locale/zh-cn.js"></script-->
 </body>
 </html>

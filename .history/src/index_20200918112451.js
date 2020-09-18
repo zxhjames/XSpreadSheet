@@ -5,18 +5,17 @@ import Sheet from './component/sheet';
 import Bottombar from './component/bottombar';
 import { cssPrefix } from './config';
 import { locale } from './locale/locale';
-import Vue from 'vue'
-import axios from 'axios'
-axios.defaults.baseURL = "http://localhost:9090/";
-Vue.prototype.$axios = axios
 import './index.less';
+import axios from 'axios'
+//可以给axios的ajax请求设置统一的主机和端口号
+axios.defaults.baseURL = "http://localhost:9090/";
+//将axios这个对象添加到Vue的原型对象中，在使用的时候就只需要使用this.对象名就可以了
+Vue.prototype.$http = axios
 
 
 
 class Spreadsheet {
-  
   constructor(selectors, options = {}) {
-    
     let targetEl = selectors;
     this.options = options;
     this.sheetIndex = 1;

@@ -77,7 +77,7 @@
           console.log('>>>', xs.getData());
           //在这里发送ajax请求
           const params = xs.getData();
-          console.log(params[0].rows)
+               
           /*console.log("cols==>   ") ; console.log(params[0].cols);
           console.log("freezz==>  "); console.log(params[0].freeze);
           console.log("merges==>   ");console.log( params[0].merges);
@@ -103,14 +103,14 @@
                  }
                  //console.log(tmp)
                  for(let j=0;j<100;++j) {
-                   if(tmp[j]!=undefined) {
+                   if(tmp[j]=undefined) {
                      cols_obj.push({"x":i,"y":j,"data":tmp[j]});
                    }
                  }
               }
           }
           console.log(cols_obj)
-
+       
           
           //console.log(cols_map)
           //console.log(params[0].rows[1].cells[0])
